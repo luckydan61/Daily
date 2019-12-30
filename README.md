@@ -8,4 +8,4 @@ Mainly about algorithm or tools.
 Year 2020, first book is 《Algorithm 4》, practice in Java/C/Python.
 I hope I can commit everyday, whatever I learn or think about.
 
-write with Visual Stdio Code. I like it.
+Write with Visual Stdio Code. I like it.
