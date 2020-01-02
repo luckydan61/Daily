@@ -52,10 +52,26 @@ void ReverseArray(double * array, int len)
     }
 }
 
+void MatrixMulti(double * array1, int len1, double * array2, int len2, double * mArray)
+{
+    int i = 0;
+    int j = 0;
+
+    for (i = 0; i < len1; i++)
+    {
+        for (j = 0; j < len2; j++)
+        {
+            *(mArray + i * len1 + j) = array1[i] * array2[j];
+        }
+    }
+}
+
 int main()
 {
     double dArray[4] = {1.2, 3.45, 99.3, 10.44};
+    double dArray2[4] = {1.3, 4.5, 6.7, 8.9};
     double cArray[4] = {0};
+    double mArray[4][4] = {0};
 
     double max = FindMaxElem(dArray, sizeof(dArray) / sizeof(double));
     printf("max = %f\n", max);
@@ -68,6 +84,9 @@ int main()
 
     ReverseArray(dArray, sizeof(dArray) / sizeof(double));
     printf("reverseArray = %f\n", dArray[0]);
+
+    MatrixMulti(dArray, 4, dArray2, 4, &mArray[0][0]);
+    printf("mArray = %f\n", mArray[0][0]);
 
     return 0;
 }

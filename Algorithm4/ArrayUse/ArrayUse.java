@@ -3,6 +3,7 @@ package Algorithm4.ArrayUse;
 public class ArrayUse {
     public static void main(String[] args) {
         double[] dArray = {1.2, 3.45, 99.3, 10.44};
+        double[] dArray2 = {1.3, 4.5, 6.7, 8.9};
         double max = FindMaxElem(dArray);
         System.out.println(max);
 
@@ -14,6 +15,9 @@ public class ArrayUse {
 
         double[] reverseArray = ReverseArray(dArray);
         System.out.println(reverseArray[0]);
+
+        double[][] mArray = MatrixMulti(dArray, dArray2);
+        System.out.println(mArray[0][0]);
     }
 
     public static double FindMaxElem(double[] array){
@@ -57,5 +61,19 @@ public class ArrayUse {
             array[len - 1 - i] = temp;
         }
         return array;
+    }
+
+    public static double[][] MatrixMulti(double[] array1, double[] array2){
+        int row = array1.length;
+        int col = array2.length;
+
+        double[][] mArray = new double[row][col];
+
+        for (int i = 0; i < row; i++){
+            for (int j = 0; j < col; j++){
+                mArray[i][j] = array1[i] * array2[j];
+            }
+        }
+        return mArray;
     }
 }
